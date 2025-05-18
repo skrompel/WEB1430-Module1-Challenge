@@ -1,0 +1,118 @@
+/* Universal Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    font-size: inherit;
+}
+
+:root {
+    --off-white: #f5f5f1;
+}
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: -0.158rem;
+    line-height: 7.899rem;
+}
+
+h1, h3, p {
+    color: var(--off-white);
+}
+
+.container {
+    width: 100%
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width:640px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width:768px
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width:1024px
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width:1280px
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width:1536px
+    }
+}
+
+/* Header Styles */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.688rem 2.125rem;
+}
+
+/* Hero Section Styles */
+
+.hero {
+    background-image: url("images/hero-background.jpeg");
+    background-color: #f5f5f1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-content-container {
+    display: flex;
+    align-items: center;
+    padding: 6.194rem 4.521rem;
+    height: 50rem;
+}
+
+.hero-title {
+    font-size: 7.899rem;
+}
+
+.hero-info {
+    display: flex;
+    flex-direction: column;
+    height: 49.551;
+}
+
+
+/* Philosophy Section Styles */
+
+
+
+/* Uses Section Styles */
+
+
+
+/* Technology Section Styles */
+
+
+
+/* Working with Nature Section Styles */
+
+
+
+/* Careers Section Styles */
+
+
+
+/* Footer Styles */
