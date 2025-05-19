@@ -4,10 +4,23 @@
     margin: 0;
     padding: 0;
     border: 0;
+    box-sizing: border-box;
     text-decoration: none;
     color: black;
     font-weight: normal;
     font-size: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+body, p {
+  font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    background-color: #103d1d;
 }
 
 :root {
@@ -16,7 +29,7 @@
 
 h1 {
     font-size: 2rem;
-    letter-spacing: -0.158rem;
+    letter-spacing: -0.25rem;
     line-height: 7.899rem;
 }
 
@@ -24,95 +37,579 @@ h1, h3, p {
     color: var(--off-white);
 }
 
-.container {
-    width: 100%
-}
-
-@media (min-width: 640px) {
-    .container {
-        max-width:640px
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        max-width:768px
-    }
-}
-
-@media (min-width: 1024px) {
-    .container {
-        max-width:1024px
-    }
-}
-
-@media (min-width: 1280px) {
-    .container {
-        max-width:1280px
-    }
-}
-
-@media (min-width: 1536px) {
-    .container {
-        max-width:1536px
-    }
-}
-
 /* Header Styles */
 
 header {
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.688rem 2.125rem;
+    padding: 1rem 2.5rem;
+    padding-top: 0;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.header-logo img {
+    width: 2.4rem;
+}
+
+.menu-icon img {
+    width: 2.4rem;
 }
 
 /* Hero Section Styles */
 
 .hero {
     background-image: url("images/hero-background.jpeg");
-    background-color: #f5f5f1;
+    background-color: var(--off-white);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust darkness */
+    z-index: -1;
 }
 
 .hero-content-container {
     display: flex;
     align-items: center;
-    padding: 6.194rem 4.521rem;
-    height: 50rem;
+    padding: 8rem 4.521rem;
+    padding-top: 20rem;
+    height: 60rem;
 }
 
 .hero-title {
     font-size: 7.899rem;
+    font-weight: 550;
+    padding-right: 10rem;
+    width: 200rem;
 }
 
 .hero-info {
     display: flex;
     flex-direction: column;
     height: 49.551;
+    padding-top: 8rem;
 }
 
+.hero-subtitle {
+    font-size: 1.5rem;
+}
+
+.button.hero-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 35%;
+    gap: 0.5rem;
+    background-color: var(--off-white);
+    color: #030200;
+    margin: 2rem 0;
+    border-radius: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.button.hero-button img {
+    width: 2.5rem;
+}
 
 /* Philosophy Section Styles */
 
+.philosophy {
+    background-color: #1c2c26;
+    padding: 20rem 5rem;
+    padding-bottom: 10rem;
+}
 
+.philosophy p {
+    color: #daba89;
+    font-size: 3rem;
+    padding-bottom: 3rem;
+}
+
+.philosophy-statement {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    width: 90%;
+}
+
+.philosophy-tagline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    padding-top: 15rem;
+}
+
+.philosophy-tagline p {
+    font-size: 1.2rem;
+    padding: 1rem;
+}
 
 /* Uses Section Styles */
 
+.uses {
+    background-color: #103d1d;
+    color: var(--off-white);
+    padding: 100px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.uses-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    width: auto;
+}
+
+.uses-label {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    color: #809784;
+    font-size: 1rem;
+    margin-left: 2rem;
+}
+
+.uses-heading {
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    padding-right: 20rem;
+    width: 150%;
+}
+
+.uses-details {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--off-white);
+    margin-bottom: 2rem;
+    width: 85%;
+}
+
+.uses-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #d4fa43;
+    text-decoration: none;
+}
+
+.uses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.use-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.1rem;
+    overflow: hidden;
+}
+
+.card-graphic {
+    width: 100%;
+    height: 20rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    margin-top: 0;
+}
+
+.card-content {
+    padding: 3rem;
+}
+
+.use-card-title {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.use-card-text {
+    font-size: 1rem;
+}
+
+.grow {
+    background-color: #daba89;
+}
+
+.utilities {
+    background-color: #628c7d;
+}
+
+.storms {
+    background-color: #275f4b;
+}
+
+.ecosystems {
+    background-color: #1c2c26;
+}
+
+.utilities, .storms, .ecosystems, .use-card-title, .use-card-text {
+    color: var(--off-white);
+}
+
+.grow .use-card-title, .grow .use-card-text {
+    color: #1c2c26;
+}
+
+.grow-img {
+    background-image: url(images/grow.png);
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.utilities-img {
+    background-image: url(images/utilities.png);
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.storms-img {
+    background-image: url(images/storms.png);
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.ecosystems-img {
+    background-image: url(images/ecosystems.png);
+    background-size: cover;
+    image-rendering: pixelated;
+}
 
 /* Technology Section Styles */
 
+.technology {
+    background-color: #030200;
+    color: var(--off-white);
+} 
 
+.technology-content-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.technology-info {
+    max-width: 50%;
+    padding: 0 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.technology-label {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #646360;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.technology-heading {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.technology-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--off-white);
+    max-width: 90%;
+    margin-bottom: 40px;
+}
+
+.button.technology-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    background-color: #e5ff42;
+    color: #103d1d;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.careers-button img.arrow {
+    width: 1rem;
+    height: auto;
+}
+
+.technology-content-container > img {
+    flex: 1;
+    max-width: 50%;
+    height: auto;
+    object-fit: cover;
+}
 
 /* Working with Nature Section Styles */
 
+.nature {
+    background-color: #103d1d;
+    height: 50rem;
+    padding-top: 5rem;
+    padding-bottom: 50rem;
+    overflow: hidden;
+}
 
+.nature-content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.nature-label {
+    font-size: 1.5rem;
+    color: #839987;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    opacity: 0.5;
+    margin-bottom: 2rem;
+}
+
+.nature-heading {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-right: 24px;
+    margin-bottom: 1.5rem;
+    width: 80%;
+}
+
+.nature-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--off-white);
+    max-width: 540px;
+    margin-bottom: 2rem;
+}
+
+.nature-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #d6ae7b;
+    color: #030200;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+}
+
+.nature-graphic {
+    position: relative;
+    width: 100%;
+    margin-top: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.nature-graphic img {
+    max-width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    position: absolute;
+    width: 90%;
+}
 
 /* Careers Section Styles */
 
+.careers {
+    position: relative;
+    background-image: url(images/careers-background.jpeg);
+    background-size: cover;
+    background-position: center;
+    color: var(--off-white);
+    padding: 4rem;
+    overflow: hidden;
+}
 
+.careers-content-container {
+    max-width: 100rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.careers-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 51rem;
+}
+
+.careers-titles {
+    position: absolute;
+    bottom: 3rem;
+    background-color: rgba(0,0,0,0.4);
+    padding: 2.5rem 3rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--off-white);
+    backdrop-filter: blur(1px); 
+}
+
+.careers-label {
+    color: var(--off-white);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.careers-heading {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.careers-details {
+    position: absolute;
+    bottom: 3rem;
+    right: 0;
+    max-width: 35rem;
+    background-color: rgba(0,0,0,0.4);
+    padding: 1.5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--off-white);
+    backdrop-filter: blur(1px);
+}
+
+.careers-details p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.button.careers-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #e5ff42;
+    color: #103d1d;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.5rem;
+    text-decoration: none;
+}
+
+.careers-button img.arrow {
+    width: 16px;
+    height: auto;
+}
 
 /* Footer Styles */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #103d1d;
+    padding: 5rem;
+    padding-bottom: 0;
+    color: var(--off-white);
+}
+
+.footer-content-container {
+    width: 100rem;
+}
+
+
+.footer-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+}
+
+.footer-logo {
+    height: 10rem;
+    width: auto;
+    margin-right: 68rem;
+}
+
+.footer-logo img {
+    fill: #275f4b;
+}
+
+.footer-nav-container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.footer-nav-container h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #275f4b;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.footer-nav-container a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    color: var(--off-white);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer hr {
+    margin: 2.5rem 0 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.footer-info p {
+    color: #275f4b;
+}
+
+footer h1 {
+    font-size: 17rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #275f4b;
+    margin: 2rem 0 0;
+    font-weight: bold;
+    bottom: 0;
+    padding-top: 2rem;
+}
